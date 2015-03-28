@@ -1,0 +1,94 @@
+@import "variables";
+@import 'settings';
+
+@include gridle_generate_classes ( );
+
+body {
+  margin: 0px;
+  font-family: Helvetica, Arial;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="button"] {
+  padding: 10px;
+  margin: 5px 0px;
+  width: 100%;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-sec {
+  background-color: white;
+  color: gray;
+  padding: 5px 0px;
+}
+
+.nav-container {
+  @extend .container;
+}
+
+.nav-in {
+  @include gridle(12);
+}
+
+.content{
+  background-color: white;
+  min-height: 600px;
+}
+
+.content-container {
+  @extend .container;
+}
+
+.footer-sec {
+  color: $gray-0;
+}
+
+.footer-container {
+  @extend .container;
+}
+
+.footer-grid {
+  @include gridle(12);
+}
+
+
+
+
+
+.home-banner-sec {
+  background-color: $gray-0;
+  color: white;
+  padding: 70px 0px;
+
+  .banner-msg {
+    @include gridle(7);
+    padding-right: 20px;
+    h1{
+      font-size: 65px;
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin: 0px;
+    }
+  }
+  .banner-login {
+    @include gridle(5);
+    padding-top: 15px;
+  }
+}
+
+.home-banner2-sec {
+  background-image: radial-gradient(circle, #23A4DE 1%, #004576 99%);
+  color: white;
+  min-height: 300px;
+  padding: 70px 0px;
+  h1 {
+    text-align: center;
+  }
+}
