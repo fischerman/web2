@@ -1,0 +1,269 @@
+@import "variables";
+@import 'settings';
+
+@include gridle_generate_classes ( );
+
+body {
+  margin: 0px;
+  font-family: Helvetica, Arial;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="button"],
+textarea {
+  padding: 10px;
+  margin: 5px 0px;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px $gray-3;
+}
+
+a {
+  text-decoration: inherit;
+  color: #6199FF;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-sec {
+  background-color: #ECECEC;;
+  color: $gray-1;
+  padding: 5px 0px;
+  border-bottom: 1px solid $gray-3;
+  h2 {
+    margin: 10px;
+  }
+  .nav-container {
+    @extend .container;
+  }
+  .nav-in {
+  	@extend .no-gutter;
+    @extend .grid-12;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      display: flex;
+      align-items: center;
+      .search{
+        width: 300px;
+        margin-left: 15px;
+        border: solid 1px rgb(205, 205, 205);
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;  
+    }
+    
+  }
+}
+
+
+
+.content{
+  background-color: white;
+  min-height: 600px;
+}
+
+.content-container {
+  @extend .container;
+}
+
+.footer-sec {
+  margin-top: 20px;
+  color: $gray-0;
+}
+
+.footer-container {
+  @extend .container;
+}
+
+.footer-grid {
+  @include gridle(12);
+  text-align: center;
+  color: rgb(173, 173, 173);
+}
+
+
+
+
+
+.home-banner-sec {
+  background-color: $gray-0;
+  color: white;
+  padding: 70px 0px;
+
+  .banner-msg {
+    @include gridle(7);
+    padding-right: 20px;
+    h1{
+      font-size: 65px;
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin: 0px;
+    }
+  }
+  .banner-login {
+    @include gridle(5);
+    padding-top: 15px;
+  }
+}
+
+.home-banner2-sec {
+  background-image: radial-gradient(circle, #23A4DE 1%, #004576 99%);
+  color: white;
+  min-height: 300px;
+  padding: 70px 0px;
+  h1 {
+    text-align: center;
+    font-size: 300;
+    margin: 10px;
+  }
+}
+
+
+
+.details-sec {
+  margin-top: 20px;
+  .main {
+    @extend .grid-8;
+    .box {
+      @extend .box-template;
+      .details-desc-content {
+        padding: 5px 20px 0px 20px;
+        .logo {
+          float: left;
+          margin: 0px 15px 15px 0px;
+          height: 170px;
+          width: 170px;
+        }
+      }
+    }
+    .discuss {
+        margin-left: 20px;
+        margin-right: 10px;
+            .threads {
+              width: 100%;
+              tr{
+                border-bottom: 1px solid rgb(207, 207, 207);
+                &:last-child{
+                  border-bottom: 0px solid rgb(207, 207, 207);
+                }
+                td {
+                  &.title {
+                    padding: 20px 10px;
+                    font-size: larger;
+                  }
+                  &.comments {
+                    padding: 5px 0px;
+                    text-align: center;
+                    font-size: 40;
+                    color: rgb(129, 129, 129);
+                  }
+                }
+              }
+            }
+            .new-text {
+            	margin-top: 20px;
+            	border: solid 1px rgb(195, 195, 195);
+            }
+    }
+  }
+  .side {
+    @extend .grid-4;
+    .box {
+      @extend .box-template;
+      .details-creator-content {
+        padding: 5px 20px;
+        ul {
+          list-style: none;
+          padding: 0px;
+          li {
+            margin: 5px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.box-template {
+	margin-bottom: 10px;
+	border: 1px solid $gray-3;
+	border-radius: 3px;
+	h3 {
+		color: rgb(74, 74, 74);
+		background-color: #ECECEC;
+		border-bottom: 1px solid $gray-3;
+		margin: 0px;
+		padding: 10px;
+		font-size: medium;
+	}
+}
+
+.thread {
+	.idea-title {
+		border-bottom: solid 1px rgb(208, 208, 208);
+		padding-left: 10px;
+		i {
+			color: gray;
+		}
+		h3 {
+			@extend .grid-12;
+		}
+	}
+	.thread-title {
+		@extend .grid-12;
+		h1 {
+			font-weight: 100;
+			margin-bottom: 10px;
+		}
+		span {
+			  color: white;
+			  background-color: rgb(116, 0, 116);
+			  padding: 4px 10px;
+			  border-radius: 5px;
+		}
+		margin-bottom: 30px;
+	}
+	.main {
+    	@extend .grid-8;
+	}
+	.side {
+		@extend .grid-4;
+	}
+	.thread-statistic {
+		@extend .box-template;
+		.statistic-content {
+	        padding: 5px 20px;
+	        ul {
+	          	list-style: none;
+	          	padding: 0px;
+	          	li {
+	            	margin: 5px 0px;
+	          	}
+	        	}
+    	}
+	}
+	.posts {
+		.post {
+			@extend .box-template;
+			p {
+				margin: 15px;
+			}
+		}
+	}
+}
+
+.impress-sec {
+
+}
