@@ -19,6 +19,12 @@ module.exports = function(grunt) {
         src: ['*'],
         dest: 'dist/mockup/',
       },
+      lib: {
+        expand: true,
+        cwd: 'src/lib/dumbledore',
+        src: ['*'],
+        dest: 'dist/lib/dumbledore/',
+      },
       assets: {
         expand: true,
         cwd: 'src/assets',
