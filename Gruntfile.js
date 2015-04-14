@@ -13,12 +13,18 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      main: {
+      mockups: {
         expand: true,
         cwd: 'src/mockup',
         src: ['*'],
         dest: 'dist/mockup/',
       },
+      assets: {
+        expand: true,
+        cwd: 'src/assets',
+        src: ['*'],
+        dest: 'dist/assets/',
+      }
     },
     watch: {
       main: {
