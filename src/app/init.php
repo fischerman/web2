@@ -26,6 +26,6 @@ function __autoload($className) {
 require_once('lib/dumbledore/dumbledore.php');
 
 $engine = new TemplateEngine();
-$engine->addTemplate(new DefaultTemplate());
+$engine->addTemplate(new DefaultTemplate(), true);
 
 require_once('routes.php');

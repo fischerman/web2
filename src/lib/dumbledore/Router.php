@@ -69,10 +69,28 @@ class Router {
 		} else {
 
 			// call controller only if provided
+			$res = new Response();
 			if(isset($route["controller"]))
-				$route["controller"]->incomingRequest($req);
+				$route["controller"]->incomingRequest($req, $res);
 
-			$this->engine->render("default", $route["view"]);
+			// compute view, options succeeds controller!
+			$view;
+			if(array_key_exists("view", $route))
+				$view = $route["view"];
+			else if (isset($res->view))
+				$view = $res->view;
+			else
+				die("No view specified");
+
+			$template;
+			if(array_key_exists("template", $route))
+				$template = $route["template"];
+			else if (isset($res->template))
+				$template = $res->template;
+			else
+				$template = $this->engine->getDefaultTemplate()->getName();
+
+			$this->engine->render($template, $view);
 		}
 	}
 }
