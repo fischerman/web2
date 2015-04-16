@@ -43,7 +43,6 @@ class Router {
 				}
 			}
 			$regex = implode('/', $regex);
-			echo "\nregex: ".$regex;
 			$requestUri = $_SERVER['REQUEST_URI'];
 			if(substr($requestUri, strlen($requestUri) -1) == "/")	// remove trailing slash for comparison
 				$requestUri = substr($requestUri, 0, strlen($requestUri) - 1);
@@ -54,13 +53,11 @@ class Router {
 				foreach ($params as $i => $name) {
 					$req["params"][$name] = $matches[$i + 1];
 				}
-				var_dump($req);
 				break;
 			}
 			else
 				continue;
 		}
-		echo "\ncompare against ". $_SERVER['REQUEST_URI']."\n";
 		if(!isset($route)) {
 			if(isset($this->r404))
 				$this->engine->render("default", $this->r404["view"]);
