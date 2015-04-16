@@ -1,4 +1,4 @@
 <?php
-abstract class Controller {
+abstract class Middleware {
 	abstract public function incomingRequest($req);
 }

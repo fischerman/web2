@@ -2,14 +2,18 @@
 
 $router = new Router();
 
-$router->addMiddleware();
+$router->addMiddleware(new Session());
 
 $router
-->addRouter("/", new Object())
-->addRoute("/welcome", new Object())
-->addRouter("/idea/:id", new Object())
-->addRouter("/idea/:id/threads", new Object())
-->addRouter("/threads/:id", new Object())
-->addRouter("/impress", new Object())
+->addRoute("/", [
+	"controller" => new DashboardController()
+])
+->addRoute("/idea/:id", [
+	"controller" => new IdeaController()
+])
+->addRoute("/welcome", [])
+->addRoute("/idea/:id/threads", [])
+->addRoute("/threads/:id", [])
+->addRoute("/impress", []);
 
-?>
+$router->processRequest();

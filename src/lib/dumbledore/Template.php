@@ -1,5 +1,5 @@
 <?php
-public Template {
+class Template {
 	public function Template($name) {
 		
 	}

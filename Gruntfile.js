@@ -8,34 +8,45 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {                         // Dictionary of files
-          'dist/css/style.css': 'src/sass/main.scss'        // 'destination': 'source'
+          'dist/static/css/style.css': 'src/sass/main.scss'        // 'destination': 'source'
         }
       }
     },
     copy: {
+      app: {
+        expand: true,
+        dot: true,
+        cwd: 'src/app',
+        src: ['**'],
+        dest: 'dist/',
+      },
       mockups: {
         expand: true,
         cwd: 'src/mockup',
-        src: ['*'],
-        dest: 'dist/mockup/',
+        src: ['**'],
+        dest: 'dist/static/mockup/',
       },
       lib: {
         expand: true,
-        cwd: 'src/lib/dumbledore',
-        src: ['*'],
-        dest: 'dist/lib/dumbledore/',
+        cwd: 'src/lib',
+        src: ['**'],
+        dest: 'dist/lib/',
       },
       assets: {
         expand: true,
         cwd: 'src/assets',
-        src: ['*'],
-        dest: 'dist/assets/',
+        src: ['**'],
+        dest: 'dist/static/assets/',
       }
     },
     watch: {
       main: {
-        files: ['src/**/*'],
-        tasks: ['build']
+        files: ['src/app/**', 'src/assets/**', 'src/lib/**', 'src/mockup/**'],
+        tasks: ['copy']
+      },
+      sass: {
+        files: ['src/sass/**'],
+        task: ['sass']
       },
       livereload: {
         options: {livereload: true},
