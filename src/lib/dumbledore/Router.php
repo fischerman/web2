@@ -2,6 +2,12 @@
 class Router {
 	private $middleware = [];
 	private $routes = [];
+	private $r404;
+	private $engine;
+
+	function __construct(TemplateEngine $engine) {
+		$this->engine = $engine;
+	}
 
 	public function addRoute($url, $options) {
 		$this->routes[$url] = $options;
@@ -9,7 +15,7 @@ class Router {
 	}
 
 	public function add404($options) {
-
+		$this->r404 = $options;
 	}
 
 	public function addMiddleware(Middleware $mid) {
@@ -37,8 +43,7 @@ class Router {
 				}
 			}
 			$regex = implode('/', $regex);
-			echo "\nregex: ".$regex."\n";
-			echo "\ncompare against ". $_SERVER['REQUEST_URI']."\n";
+			echo "\nregex: ".$regex;
 			$requestUri = $_SERVER['REQUEST_URI'];
 			if(substr($requestUri, strlen($requestUri) -1) == "/")	// remove trailing slash for comparison
 				$requestUri = substr($requestUri, 0, strlen($requestUri) - 1);
@@ -55,11 +60,19 @@ class Router {
 			else
 				continue;
 		}
-		if(!isset($route))
-			die('No route found');
+		echo "\ncompare against ". $_SERVER['REQUEST_URI']."\n";
+		if(!isset($route)) {
+			if(isset($this->r404))
+				$this->engine->render("default", $this->r404["view"]);
+			else
+				die('No route found and no 404 provided');
+		} else {
 
-		// call controller only if provided
-		if(isset($route["controller"]))
-			$route["controller"]->incomingRequest($req);
+			// call controller only if provided
+			if(isset($route["controller"]))
+				$route["controller"]->incomingRequest($req);
+
+			$this->engine->render("default", $route["view"]);
+		}
 	}
 }
