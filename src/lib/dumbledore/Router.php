@@ -64,11 +64,12 @@ class Router {
 			else
 				die('No route found and no 404 provided');
 		} else {
+			$data = [];
 
 			// call controller only if provided
 			$res = new Response();
 			if(isset($route["controller"]))
-				$route["controller"]->incomingRequest($req, $res);
+				$route["controller"]->incomingRequest($req, $data, $res);
 
 			// compute view, options succeeds controller!
 			$view;
@@ -87,7 +88,7 @@ class Router {
 			else
 				$template = $this->engine->getDefaultTemplate()->getName();
 
-			$this->engine->render($template, $view);
+			$this->engine->render($template, $view, $data);
 		}
 	}
 }

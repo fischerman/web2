@@ -1,4 +1,4 @@
 <?php
 abstract class Middleware {
-	abstract public function incomingRequest($req);
+	abstract public function incomingRequest(&$req);
 }

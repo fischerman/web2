@@ -16,7 +16,7 @@ class TemplateEngine {
 		return $this->default;
 	}
 
-	public function render($templateName, $view) {
+	public function render($templateName, $view, $data) {
 		if(!array_key_exists($templateName, $this->templates))
 			die("Template doesn't exist");
 		$template = $this->templates[$templateName];

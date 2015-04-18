@@ -1,6 +1,6 @@
 <?php
 class DashboardController extends Controller {
-	public function incomingRequest($req, Response $res) {
+	public function incomingRequest(&$req, &$data, Response $res) {
 		
 	}
 }
