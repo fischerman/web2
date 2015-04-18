@@ -6,16 +6,24 @@ $router->addMiddleware(new SessionMiddleware());
 $router->addMiddleware(new DatabaseMiddleware());
 
 $router
-->addRoute("/dash", [
-	"controller" => new DashboardController()
+->addRoute("/dashboard", [
+	"controller" => new DashboardController(),
+	"view" => "dashboard"
 ])
 ->addRoute("/idea/:id", [
 	"controller" => new IdeaController(),
 	"view" => "idea"
 ])
-->addRoute("/welcome", [])
-->addRoute("/idea/:id/threads", [])
-->addRoute("/threads/:id", [])
+->addRoute("/login", [
+	"controller" => new LoginController()
+])
+->addRoute("/welcome", [
+	"view" => "welcome"
+])
+->addRoute("/thread/:id", [
+	"controller" => new ThreadController(),
+	"view" => "thread"
+])
 ->addRoute("/impress", []);
 
 $router->add404([
