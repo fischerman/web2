@@ -5,10 +5,10 @@ class DefaultTemplate extends Template{
 	}
 
 	public function beforeRender() {
-		echo "Header";
+		require("template/defaultHeader.tpl");
 	}
 
 	public function afterRender() {
-		echo "Footer";
+		require("template/defaultFooter.tpl");
 	}
 }
