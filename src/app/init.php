@@ -3,6 +3,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+require_once('config.php');
+
 function __autoload($className) {
 	$regex = "#.+([A-Z][a-z0-9]+)$#";
 	$matches = [];
