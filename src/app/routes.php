@@ -3,6 +3,7 @@
 $router = new Router($engine);
 
 $router->addMiddleware(new SessionMiddleware());
+$router->addMiddleware(new DatabaseMiddleware());
 
 $router
 ->addRoute("/dash", [
