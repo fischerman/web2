@@ -1,7 +1,7 @@
 <div class="thread">
 	<div class="idea-title">
 		<div class="container">
-			<h3><i class="fa fa-lightbulb-o"></i> <a href="#">Create an idea exchange</a></h3>
+			<h3><i class="fa fa-lightbulb-o"></i> <a href="/idea/<?=$data['thread']['idea'] ?>"><?=$data['thread']['ideaName'] ?></a></h3>
 		</div>
 	</div>
 	<div class="container">
@@ -13,7 +13,7 @@
 			<div class="posts">
 				<?php foreach($data['posts'] as $post): ?>
 					<div class="post">
-						<h3>Test</h3>
+						<h3><?=$post['fullName'] ?> <span><?=date('M d, Y', strtotime($post['createdAt'])) ?></span></h3>
 						<p><?=$post['content'] ?></p>
 					</div>
 				<?php endforeach; ?>
@@ -25,8 +25,8 @@
 				<h3>Statistic</h3>
 				<div class="statistic-content">
 					<ul>
-						<li><span>Comments:</span> 2</li>
-						<li><span>Created by:</span> Bj&ouml;rn Fischer</li>
+						<li><span>Comments:</span> <?=count($data['posts']) ?></li>
+						<li><span>Created by:</span> <?=$data['thread']['fullName']?></li>
 					</ul>
 				</div>
 			</div>
