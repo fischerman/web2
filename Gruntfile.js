@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     sass: {                              // Task
       dist: {                            // Target
         options: {                       // Target options
-          style: 'expanded'
+          style: 'expanded',
+          sourcemap: 'inline',
         },
         files: {                         // Dictionary of files
           'dist/static/css/style.css': 'src/sass/main.scss'        // 'destination': 'source'
@@ -45,8 +46,8 @@ module.exports = function(grunt) {
         tasks: ['copy']
       },
       sass: {
-        files: ['src/sass/**'],
-        task: ['sass']
+        files: ['src/sass/**/*'],
+        tasks: ['sass']
       },
       livereload: {
         options: {livereload: true},

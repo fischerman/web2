@@ -1,0 +1,52 @@
+body {
+  margin: 0px;
+  font-family: Helvetica, Arial;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="button"],
+textarea {
+  padding: 10px;
+  margin: 5px 0px;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px $gray-3;
+}
+
+a {
+  text-decoration: inherit;
+  color: #6199FF;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content{
+  background-color: white;
+  min-height: 600px;
+}
+
+.content-container {
+  @extend .container;
+}
+
+.box-template {
+	margin-bottom: 10px;
+	border: 1px solid $gray-3;
+	border-radius: 3px;
+	h3 {
+		color: rgb(74, 74, 74);
+		background-color: #ECECEC;
+		border-bottom: 1px solid $gray-3;
+		margin: 0px;
+		padding: 10px;
+		font-size: medium;
+	}
+}
