@@ -1,0 +1,38 @@
+.dashboard {
+	.top-banner {
+		background-image: radial-gradient(circle, #23A4DE 1%, #004576 99%);
+		padding-top: 40px;
+		padding-bottom: 40px;
+		padding-left: 100px;
+		padding-right: 100px;
+		.message {
+			@include gridle(7);
+			h2 {
+				margin: 5px;
+			}
+			color: white;
+		}
+		.create {
+			@include gridle(5);
+		}
+	}
+	.new-ideas {
+		@include gridle(12);
+	}
+	.hottest-ideas {
+		@include gridle(12);
+	}
+	.idea-list {
+		width: 100%;
+		.stat {
+			padding: 10px 20px;
+			text-align: center;
+		}
+		.description {
+			padding-left: 20px;
+			display: flex;
+  			justify-content: space-between;
+  			align-items: center;
+		}
+	}
+}

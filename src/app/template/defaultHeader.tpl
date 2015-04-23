@@ -9,7 +9,7 @@
       <div class="nav-container">
         <div class="nav-in">
         	<div class="left">
-        		<h2><i class="fa fa-exchange"></i> Idea Exchange</h2>
+        		<h2><a href="/dashboard"><i class="fa fa-exchange"></i> Idea Exchange</a></h2>
           		<input class="search" type="text" placeholder="Suche"/>
         	</div>
         	<div class="right">
