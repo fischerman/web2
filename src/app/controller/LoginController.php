@@ -4,10 +4,9 @@ class LoginController extends Controller {
 		if($_SERVER['REQUEST_METHOD'] == "POST") {
 			// check credentials
 			$db = $req["db"];
-			echo $_POST['name'].$_POST['password'];
 			$row;
 			try {
-				$stmt = $db->prepare("SELECT * FROM users WHERE name = :name AND password = :password");
+				$stmt = $db->prepare("SELECT * FROM users WHERE userName = :name AND password = :password");
 				$stmt->bindParam(':name', $_POST['name']);
 				$stmt->bindParam(':password', $_POST['password']);
 				$stmt->execute();
@@ -17,10 +16,12 @@ class LoginController extends Controller {
 			}
 			if($row) { // user and password match!
 				$_SESSION["authenticated"] = true;
+				$_SESSION["userId"] = $row["userId"];
+				$_SESSION["fullName"] = $row["fullName"];
 				header('Location: /dashboard');
 				die();
 			} else {
-				$data["loginFailed"] = false;
+				$data["loginFailed"] = true;
 				$res->view = 'welcome';
 			}
 		} else {

@@ -11,6 +11,9 @@
     </div>
     <div class="banner-login">
       <form action="/login" method="POST">
+        <?php if(isset($data['loginFailed'])): ?>
+          Try again!
+        <?php endif; ?>
         <input type="text" name="name" value="" placeholder="DHBW email"/>
         <input type="password" name="password" value="" placeholder="Password"/>
         <input type="submit" value="Sign in"/>

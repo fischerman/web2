@@ -13,7 +13,15 @@
           		<input class="search" type="text" placeholder="Suche"/>
         	</div>
         	<div class="right">
-        		<span><i class="fa fa-user"></i> it13131</span>
+            <?php if($_SESSION['authenticated']): ?>
+        		  <span>
+                <i class="fa fa-user"></i> 
+                <?=$_SESSION['fullName'] ?>
+                <a href="/logout"><i class="fa fa-sign-out"></i></a>
+              </span>
+            <?php else: ?>
+              <span><a href="/welcome">Login</a></span>
+            <?php endif; ?>
         	</div>
         </div>
         <div class="clear"></div>

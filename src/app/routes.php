@@ -17,6 +17,9 @@ $router
 ->addRoute("/login", [
 	"controller" => new LoginController()
 ])
+->addRoute("/logout", [
+	"controller" => new LogoutController()
+])
 ->addRoute("/welcome", [
 	"view" => "welcome"
 ])
