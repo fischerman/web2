@@ -10,6 +10,10 @@ $router
 	"controller" => new DashboardController(),
 	"view" => "dashboard"
 ])
+->addRoute("/idea/new", [
+	"controller" => new NewIdeaController(),
+	"view" => "newidea"
+])
 ->addRoute("/idea/:id", [
 	"controller" => new IdeaController(),
 	"view" => "idea"
