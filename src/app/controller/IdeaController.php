@@ -1,6 +1,10 @@
 <?php
 class IdeaController extends Controller {
 	public function incomingRequest(&$req, &$data, Response $res) {
+		if(substr($_SERVER['REQUEST_URI'], strlen($_SERVER['REQUEST_URI'])-1) != "/") {
+			header('Location: /idea/' . $req["params"]["id"] . '/');
+			die();
+		}
 		$db = $req['db'];
 		$stmt = $db->prepare("SELECT * FROM ideas JOIN users ON userId = ideas.createdBy WHERE ideaId = :id");
 		$id = intval($req["params"]["id"]);
