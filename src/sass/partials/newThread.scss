@@ -1,0 +1,12 @@
+.new-thread {
+	.idea-title {
+		border-bottom: solid 1px rgb(208, 208, 208);
+		padding-left: 10px;
+		i {
+			color: gray;
+		}
+		h3 {
+			@extend .grid-12;
+		}
+	}
+}

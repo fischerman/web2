@@ -13,7 +13,7 @@
 			<div class="posts">
 				<?php foreach($data['posts'] as $post): ?>
 					<div class="post">
-						<h3><?=$post['fullName'] ?> <span><?=date('M d, Y', strtotime($post['createdAt'])) ?></span></h3>
+						<h3><?=$post['fullName'] ?> <span class="date">@<?=date('M d, Y', strtotime($post['createdAt'])) ?></span></h3>
 						<p><?=$post['content'] ?></p>
 					</div>
 				<?php endforeach; ?>

@@ -27,6 +27,10 @@ $router
 ->addRoute("/welcome", [
 	"view" => "welcome"
 ])
+->addRoute("/idea/:id/newthread", [
+	"controller" => new NewThreadController(),
+	"view" => "newthread"
+])
 ->addRoute("/thread/:id", [
 	"controller" => new ThreadController(),
 	"view" => "thread"

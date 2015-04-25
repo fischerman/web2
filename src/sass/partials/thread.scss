@@ -45,6 +45,11 @@
 	.posts {
 		.post {
 			@extend .box-template;
+			h3 {
+				.date {
+					font-weight: normal;
+				}
+			}
 			p {
 				margin: 15px;
 			}
