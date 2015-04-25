@@ -19,6 +19,18 @@ textarea {
   border: solid 1px $gray-3;
 }
 
+.button { // to make a link look like a button
+  background: rgb(221, 221, 221);
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 0px;
+  margin: 5px 0px;
+  font-size: 13px;
+}
+
 a {
   text-decoration: inherit;
   color: #6199FF;
@@ -50,4 +62,9 @@ a {
 		padding: 10px;
 		font-size: medium;
 	}
+}
+
+.data-placeholder {
+  text-align: center;
+  font-style: italic;
 }

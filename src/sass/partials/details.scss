@@ -18,6 +18,10 @@
     .discuss {
         margin-left: 20px;
         margin-right: 10px;
+        .no-topics {
+          @extend .data-placeholder;
+          min-height: 50px;
+        }
             .threads {
               width: 100%;
               tr{
@@ -38,10 +42,6 @@
                   }
                 }
               }
-            }
-            .new-text {
-            	margin-top: 20px;
-            	border: solid 1px rgb(195, 195, 195);
             }
     }
   }

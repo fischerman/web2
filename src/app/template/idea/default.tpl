@@ -17,15 +17,19 @@
         </div>
         <div class="discuss">
           <h2>Discuss</h2>
-          <table class="threads">
-          	<?php foreach($data['threads'] as $thread):  ?>
-	            <tr>
-	              <td class="comments">12</td>
-	              <td class="title"><a href="/thread/<?=$thread['threadId'] ?>"><?=$thread['threadName'] ?></a></td>
-	            </tr>
-        	<?php endforeach; ?>
-          </table>
-          <input class="new-text" type="text" placeholder="New toppic"/>
+          <?php if(!empty($data['threads'])): ?>
+            <table class="threads">
+            	<?php foreach($data['threads'] as $thread):  ?>
+  	            <tr>
+  	              <td class="comments">12</td>
+  	              <td class="title"><a href="/thread/<?=$thread['threadId'] ?>"><?=$thread['threadName'] ?></a></td>
+  	            </tr>
+        	    <?php endforeach; ?>
+            </table>
+          <?php else: ?>
+            <p class="no-topics">No topics created</p>
+          <?php endif; ?>
+          <a class="button" href="newthread">New topic</a>
         </div>
       </div>
       <div class="side">
