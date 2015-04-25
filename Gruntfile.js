@@ -38,6 +38,12 @@ module.exports = function(grunt) {
         cwd: 'src/assets',
         src: ['**'],
         dest: 'dist/static/assets/',
+      },
+      jquery: {
+        expand: true,
+        cwd: 'bower_components/jquery/dist/',
+        src: ['jquery.min.js'],
+        dest: 'dist/static/lib/',
       }
     },
     watch: {

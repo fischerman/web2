@@ -18,7 +18,14 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
-			<textarea rows="7" placeholder="Join in"></textarea>
+			<div class="new-post">
+				<form>
+					<textarea name="content" rows="7" placeholder="Join in"></textarea>
+					<div id="post-options" style="display:none">
+						<input type="submit" value="Post"/>
+					</div>
+				</form>
+			</div>
 		</div>
 		<div class="side">
 			<div class="thread-statistic">
@@ -33,3 +40,26 @@
 		</div>
 	</div>
 </div>
+<script>
+	$(".new-post textarea").focus(function () {
+		$("#post-options").show("slow");
+	});
+	$(".new-post form").submit(function(event) {
+		console.log($(".new-post form").serializeArray());
+		$.ajax({
+			url: "?json",
+			method: "POST",
+			data: $(".new-post form").serialize()
+		})
+		.done(function(data) {
+			console.log(data);
+			$(".posts").append('<div class="post" id="' + data.postId + '" style="display:none"><h3>' + data.fullName + ' <span class="date">@' + data.createdAt + '</span></h3><p>' + data.content + '</p></div>');
+			$(".posts #" + data.postId).show("slow");
+		});
+		$(".new-post form")[0].reset();
+		event.preventDefault();
+	});
+	function resetForm() {
+
+	}
+</script>

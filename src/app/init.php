@@ -29,5 +29,6 @@ require_once('lib/dumbledore/dumbledore.php');
 
 $engine = new TemplateEngine();
 $engine->addTemplate(new DefaultTemplate(), true);
+$engine->addTemplate(new JSONTemplate());
 
 require_once('routes.php');
