@@ -35,7 +35,12 @@ $router
 	"controller" => new ThreadController(),
 	"view" => "thread"
 ])
-->addRoute("/impress", []);
+->addRoute("/impress", [
+	"view" => "impress"
+])
+->addRoute("/contact", [
+	"view" => "contact"
+]);
 
 $router->add404([
 	"view" => "404"
