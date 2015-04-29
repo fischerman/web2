@@ -44,6 +44,12 @@ module.exports = function(grunt) {
         cwd: 'bower_components/jquery/dist/',
         src: ['jquery.min.js'],
         dest: 'dist/static/lib/',
+      },
+      validate: {
+        expand: true,
+        cwd: 'bower_components/jquery-validation/dist/',
+        src: ['jquery.validate.min.js'],
+        dest: 'dist/static/lib/',        
       }
     },
     watch: {
