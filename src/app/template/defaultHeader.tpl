@@ -12,7 +12,9 @@
         <div class="nav-in">
         	<div class="left">
         		<h2><a href="/dashboard"><i class="fa fa-exchange"></i> Idea Exchange</a></h2>
-          		<input class="search" type="text" placeholder="Suche"/>
+              <form method="get" action="/search">
+          		  <input class="search" type="text" name="q" placeholder="Suche"/>
+              </form>
         	</div>
         	<div class="right">
             <?php if($_SESSION['authenticated']): ?>

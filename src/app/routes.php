@@ -40,6 +40,10 @@ $router
 ])
 ->addRoute("/contact", [
 	"view" => "contact"
+])
+->addRoute("/search", [
+	"controller" => new SearchController(),
+	"view" => "search"
 ]);
 
 $router->add404([
