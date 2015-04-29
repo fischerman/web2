@@ -3,11 +3,14 @@
   color: $gray-1;
   padding: 5px 0px;
   border-bottom: 1px solid $gray-3;
+  a {
+      color: inherit;
+      &:hover {
+        color: #6199FF;
+      }
+  }
   h2 {
     margin: 10px;
-    a {
-      color: black;
-    }
   }
   .nav-container {
     @extend .container;

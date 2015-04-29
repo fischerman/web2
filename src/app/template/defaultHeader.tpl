@@ -15,9 +15,14 @@
         	</div>
         	<div class="right">
             <?php if($_SESSION['authenticated']): ?>
-        		  <span>
-                <i class="fa fa-user"></i> 
-                <?=$_SESSION['fullName'] ?>
+              <span>
+                <a href="/idea/new">
+                  <i class="fa fa-plus"></i> 
+                </a>&nbsp;
+                <a href="/profile">
+                  <i class="fa fa-user"></i> 
+                  <?=$_SESSION['fullName'] ?>
+                </a>&nbsp;
                 <a href="/logout"><i class="fa fa-sign-out"></i></a>
               </span>
             <?php else: ?>
