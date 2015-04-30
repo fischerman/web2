@@ -5,7 +5,7 @@
 				<h2>Share your idea</h2>
 			</div>
 			<div class="create">
-				<input type="button" value="Create"/>
+				<a href="/idea/new" class="button">Create a new idea</a>
 			</div>
 			<div style="clear:both;"></div>
 		</div>
