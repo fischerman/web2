@@ -6,5 +6,6 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="//localhost:35729/livereload.js"></script>
   </body>
 </html>
