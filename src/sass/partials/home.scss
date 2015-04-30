@@ -30,3 +30,17 @@
     margin: 10px;
   }
 }
+
+.home-explanation-sec {
+  .explanation-tile {
+    @extend .grid-6;
+    text-align: center;
+    i {
+      font-size: 80px;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.8;
+    }
+  }
+}

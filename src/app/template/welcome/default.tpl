@@ -29,3 +29,27 @@
     <div class="clear"></div>
   </div>
 </div>
+<div class="home-explanation-sec">
+  <div class="container">
+    <div class="explanation-tile">
+      <i class="fa fa-cube"></i>
+      <h1>Share your own idea.</h1>
+      <p>Have an idea and need help with it? Find people to support you and your idea</p>
+    </div>
+    <div class="explanation-tile">
+      <i class="fa fa-cube"></i>
+      <h1>Help others</h1>
+      <p>Got some free time? Contribute to others ideas. Discuss about certain aspects or start working on an implementation.</p>
+    </div>
+    <div class="explanation-tile">
+      <i class="fa fa-cube"></i>
+      <h1>Get inspired</h1>
+      <p>Browse on ideas and find out what people are thinking about.</p>
+    </div>
+    <div class="explanation-tile">
+      <i class="fa fa-cube"></i>
+      <h1>Collaborate with other students</h1>
+      <p>Use this plattform to collaborate in a team.</p>
+    </div>
+  </div>
+</div>
