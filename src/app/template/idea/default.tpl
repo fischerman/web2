@@ -7,7 +7,7 @@
             <h1><?=$data["idea"]["ideaName"] ?></h1>
 
             <p>
-              <img class="logo" src="/assets/lightbulb.jpg" />
+              <img class="logo" src="/static/assets/lightbulb.jpg" />
               <?=$data["idea"]["description"] ?>
           	</p>
             <p>
