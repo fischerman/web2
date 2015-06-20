@@ -17,7 +17,7 @@ RUN git clone https://github.com/fischerman/web2.git web2
 WORKDIR /tmp/web2
 
 RUN npm install
-RUN bower install
+RUN bower install --allow-root
 
 RUN grunt
 
