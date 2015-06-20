@@ -12,13 +12,17 @@ RUN npm install -g bower
 
 WORKDIR /tmp
 
-RUN git clone https://github.com/fischerman/web2.git web2
+ADD . /tmp/web2/
 
 WORKDIR /tmp/web2
 
 RUN npm install
 RUN bower install --allow-root
 
-RUN grunt
+RUN grunt build
 
-RUN cp dist/ /app
+RUN cp -r dist/* /app
+
+RUN sed -i '19i\mysql -uroot < /tmp/web2/example/dummy.sql\' /create_mysql_admin_user.sh
+
+RUN cp example/config.php /app/
