@@ -19,16 +19,14 @@
             <?php if($_SESSION['authenticated']): ?>
               <span>
                 <a href="/idea/new">
-                  <i class="fa fa-plus"></i> 
+                  <i class="fa fa-plus"></i>
                 </a>&nbsp;
                 <a href="/profile">
-                  <i class="fa fa-user"></i> 
+                  <i class="fa fa-user"></i>
                   <?=$_SESSION['fullName'] ?>
                 </a>&nbsp;
                 <a href="/logout"><i class="fa fa-sign-out"></i></a>
               </span>
-            <?php else: ?>
-              <span><a href="/welcome">Login</a></span>
             <?php endif; ?>
         	</div>
         </div>
