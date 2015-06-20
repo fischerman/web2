@@ -1,7 +1,7 @@
 FROM tutum/lamp
 MAINTAINER fischerman
 
-RUN apt-get update &&
+RUN apt-get update && \
   apt-get -y install nodejs npm ruby-full
 
 RUN gem install sass
