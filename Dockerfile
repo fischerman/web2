@@ -4,6 +4,8 @@ MAINTAINER fischerman
 RUN apt-get update && \
   apt-get -y install nodejs npm ruby-full
 
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
 RUN gem install sass
 RUN npm install -g grunt-cli
 
