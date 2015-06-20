@@ -21,7 +21,8 @@ RUN bower install --allow-root
 
 RUN grunt build
 
-RUN cp -r dist/* /app
+RUN rm -rf /app/*
+RUN cp -r dist/. /app
 
 RUN sed -i '19i\mysql -uroot < /tmp/web2/example/dummy.sql\' /create_mysql_admin_user.sh
 
