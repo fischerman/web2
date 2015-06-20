@@ -8,12 +8,16 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN gem install sass
 RUN npm install -g grunt-cli
+RUN npm install -g bower
 
 WORKDIR /tmp
 
 RUN git clone https://github.com/fischerman/web2.git web2
 
 WORKDIR /tmp/web2
+
+RUN npm install
+RUN bower install
 
 RUN grunt
 
